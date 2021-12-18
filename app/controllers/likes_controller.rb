@@ -3,13 +3,13 @@ class LikesController < ApplicationController
 
   def create
     @dog.likes.create(user_id: current_user.id)
-    redirect_to dogs_path(@dog)
+    redirect_to dog_path(@dog)
   end
 
   private
 
   def set_dog
-    @dog = Dog.find(params[:id])
+    @dog = Dog.find(params[:dog_id])
   end
 
 end
