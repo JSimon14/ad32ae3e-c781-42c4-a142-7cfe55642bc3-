@@ -82,4 +82,8 @@ class DogsController < ApplicationController
   def dog_belongs_to_user
     head :forbidden unless current_user == @dog.user
   end
+
+  def dog_does_not_belong_to_user
+    head :forbidden if current_user == @dog.user
+  end
 end
